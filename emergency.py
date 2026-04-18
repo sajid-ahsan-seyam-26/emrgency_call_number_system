@@ -113,3 +113,44 @@ def mark_call_resolved():
     mark_call_resolved=input("enter resolved call")
     found=False
     for call in calls:
+        if call["phone"]==resolved_phone:
+            call["status"]='resolved'
+            print("emergency call maked resolved sucesfully")
+            found=True
+            break
+        if found==False:
+            print("emergency call not found")
+def menu():
+    while True:
+        print("=====emergency call center system=====")
+        print("1.add emrgency calls")
+        print("2.show all emrgency calls")
+        print("3. serach emrgency calls")
+        print("4.update emrgency call")
+        print("5. delete emrgecny call ")
+        pritn("6. show pending calls")
+        print("7. mark call as resolved")
+        print("8. Exit")
+        choice=input("enter your choice")
+                if choice == "1":
+            add_emergency_call()
+        elif choice == "2":
+            show_all_calls()
+        elif choice == "3":
+            search_call()
+        elif choice == "4":
+            update_call()
+        elif choice == "5":
+            delete_call()
+        elif choice == "6":
+            show_pending_calls()
+        elif choice == "7":
+            mark_call_resolved()
+        elif choice == "8":
+            print("Program closed.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+menu()
